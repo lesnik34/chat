@@ -16,7 +16,6 @@ export function fetchMessages() {
 export function fetchMessagesSend(message) {
     return dispatch => {
         socket.emit('CHAT:SEND', message);
-        console.log('сообщение отправлено')
 
         dispatch(fetchMessagesAdd(message))
     }
