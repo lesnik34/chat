@@ -1,0 +1,94 @@
+@import "../../sass/variables";
+
+.users {
+  position: absolute;
+  left: 0;
+  top: -100vh;
+  padding-top: 60px;
+  z-index: 30;
+  width: 100%;
+  height: 100%;
+  background-color: $background;
+  display: flex;
+  justify-content: center;
+  transition: 300ms;
+  overflow-y: auto;
+
+  @media (min-width: $tablet-width) {
+    width: 60%;
+    z-index: auto;
+    position: static;
+    padding-top: 0;
+    border-right: 2px solid $mine-shaft;
+    height: 100%;
+  }
+}
+
+.users__list {
+  margin: 0;
+  padding: 0;
+  padding-top: 50px;
+}
+
+.users__item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+
+  &.online .users__status {
+    color: $anakiwa;
+  }
+
+  &.offline {
+    opacity: .5;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.users__image {
+  margin-right: 17px;
+  width: 44px;
+  height: 44px;
+  background-color: $basic-grey;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 50%;
+}
+
+.users__name {
+  margin: 0;
+  font-family: $default-font;
+  font-size: 18px;
+  color: $alabaster;
+}
+
+.users__status {
+  font-family: $default-font;
+  font-size: 14px;
+  color: $alto;
+}
+
+.users__delete {
+  border: none;
+  background-color: transparent;
+  color: $basic-white;
+  text-transform: lowercase;
+  font-family: $default-font;
+  font-size: 12px;
+  padding: 0;
+  margin-left: auto;
+}
+
+.users__status-wrap {
+  display: flex;
+}
+
+.users__info {
+  flex-grow: 1;
+}
+
+

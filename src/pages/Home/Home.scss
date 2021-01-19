@@ -1,0 +1,48 @@
+@import "src/sass/variables";
+
+.home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.home__wrapper {
+  width: 223px;
+}
+
+.home__header {
+  font-size: 18px;
+  font-family: $default-font;
+  color: $basic-white;
+  width: 157px;
+  margin: 0;
+  margin-bottom: 19px;
+}
+
+.home__text {
+  font-size: 14px;
+  font-family: $default-font;
+  color: $silver-chalice;
+  margin: 0;
+  margin-bottom: 49px;
+}
+
+.home__btn {
+  background-color: $anakiwa;
+  color: $basic-white;
+  font-family: $default-font;
+  font-size: 15px;
+  text-transform: uppercase;
+  border-radius: 50px;
+  padding: 10px 30px;
+  border: none;
+  margin: 0 auto;
+  display: block;
+  position: relative;
+
+  &:disabled {
+    background-color: $basic-grey;
+    color: $basic-grey;
+  }
+}
