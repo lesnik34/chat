@@ -3,7 +3,9 @@ const app = express()
 const server = require('http').createServer(app);
 const io = require('socket.io')(server);
 
-app.use(express.static('public'));
+app.use(express.static('build'));
+
+const PORT = process.env.PORT || 3001;
 
 const chatStorage = {
     users: {},
@@ -69,7 +71,7 @@ io.on('connection', socket => {
     })
 })
 
-server.listen(8888, (err) => {
+server.listen(PORT, (err) => {
     if (err) {
         throw Error(err);
     }
