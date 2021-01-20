@@ -4,8 +4,9 @@ const server = require('http').createServer(app);
 const io = require('socket.io')(server);
 
 app.use(express.static('build'));
+// app.use(express.json());
 
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 8888;
 
 const chatStorage = {
     users: {},

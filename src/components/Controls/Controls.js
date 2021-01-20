@@ -11,11 +11,16 @@ function Controls(props) {
     const fileInput = useRef(null);
 
     const changeHandler = (e) => {
-        if (e.target.files[0]) {
+        const type = e.target.files[0].name.split('.').pop();
+
+        if (type === 'jpg' || type === 'png') {
             setFileVision(true);
             getBase64Image(e.target.files[0]).then(data => {
                 setFile(data)
             });
+        } else {
+            fileInput.current.value = '';
+            alert('Wrong type')
         }
     }
 
@@ -63,7 +68,7 @@ function Controls(props) {
                             ref={fileInput}
                             type="file"
                             className='controls__file'
-                            accept='image/*'
+                            accept='image/jpeg, image/png'
                             onChange={changeHandler}
                         />
 
